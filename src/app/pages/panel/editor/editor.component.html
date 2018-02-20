@@ -1,0 +1,17 @@
+<div class="body-blur">
+  <div class="section-header">
+    <h2>
+      Editar Post
+    </h2>
+  </div>
+  <div class="container">
+    <form [formGroup]="form">
+      <input #titulo formControlName="titulo" placeholder="Titulo..." type="text">
+      <div class="alert alert-danger" [hidden]="!alertaTitulo"> Ingrese algún titulo </div>
+      <app-tinymce #editor (onContentChanged)="logChange($event);" formControlName="editor"></app-tinymce>
+      <div class="alert alert-danger" [hidden]="!alertaNoticia"> Ingrese el texto de la noticia </div>
+    </form>
+    <button class="button" (click)="goBack()">Atras</button>
+    <button class="button" type="button" (click)="patchValue()">Guardar post</button>
+  </div>
+</div>

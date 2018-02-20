@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="news">
+  <div class="section-header">
+      <h2>
+        Noticias
+      </h2>
+  </div>
+  <div class="container">
+
+      <div class="row mb-5">
+          <div *ngFor="let key of keys">
+              <div class="col-sm-6 col-md-3 card-general">
+                  <div class="card card-inverse card-info">
+                      <img class="card-img-top" src="{{posts[key].url}}"/>
+                      <div class="card-block">
+                          <h4 class="card-title">{{posts[key].titulo}}</h4>
+                      </div>
+                      <div class="card-footer">
+                         <button class="btn btn-info btn-sm" (click)="irNoticia(key)">Leer Más</button> 
+                       <!-- <a class="btn btn-info btn-sm" routerLink="/detalle-noticia/{{key}}" class="cta-btn btn2">Leer Más</a>-->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<app-footer></app-footer>

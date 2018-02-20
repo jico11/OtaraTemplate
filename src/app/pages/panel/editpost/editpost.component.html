@@ -1,0 +1,86 @@
+<section id="proyects">
+  <div class="section-header">
+    <h2>
+      EDITAR POST
+    </h2>
+  </div>
+  <div class="container">
+    <div class="row column-top">
+      <!-- Fin Columna md 12 -->
+      <div class="col-md-12">
+
+        <div class="col-md-12 posts">
+            <div class="post-container">
+                <div class="row">
+                  <div class="col-xs-12 col-md-6 col-lg-6">
+                    <p class="post-title title-header">Titulo</p>
+                  </div>
+                  <div class="col-xs-12 col-md-4 col-lg-4">
+                    <p class="post-title title-header">Fecha</p>
+                  </div>
+                  <div class="col-xs-12 col-md-2 col-lg-2">
+                    <p class="post-title title-header center">Editar</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+<!--
+        <div class="col-xs-12 col-md-12 posts" *ngFor="let post of pagedItems">
+          <div class="post-container">
+            <div class="row">
+              <div class="col-xs-12 col-md-6 col-lg-6">
+                <p class="post-title">{{ (post| async)?.titulo }}</p>
+              </div>
+              <div class="col-xs-12 col-md-4 col-lg-4">
+                <p class="post-title">{{ post.fecha }}</p>
+                <p class="post-title">{{ post[key].titulo }}der</p>
+              </div>
+              <div class="col-xs-12 col-md-2 col-lg-2">
+                <a routerLink="/panel/editor/{{post._id}}" class="cta-btn btn2">editar</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="col-xs-12 col-md-12 posts" *ngFor="let key of pagedItems">
+          <div class="post-container">
+            <div class="row">
+              <div class="col-xs-12 col-md-6 col-lg-6">
+                <p class="post-title">{{ posts[key].titulo }}</p>
+              </div>
+              <div class="col-xs-12 col-md-4 col-lg-4">
+                <p class="post-title">{{ posts[key].fecha }}</p>
+              </div>
+              <div class="col-xs-12 col-md-2 col-lg-2">
+                <a routerLink="/panel/editor/{{key}}" class="cta-btn btn2">editar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <!-- pager -->
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(1)">Primera</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(pager.currentPage - 1)">Anterior</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+              <a (click)="setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.currentPage + 1)">Siguiente</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.totalPages)">Ultima</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fin Columna -->
+      <button class="button" (click)="goBack()">Atras</button>
+    </div>
+    
+  </div>
+</section>

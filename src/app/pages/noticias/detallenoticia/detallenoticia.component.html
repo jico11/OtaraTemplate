@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="body-blur">
+  <div class="container">
+    <div class="row">
+      <div class="section-header columns small-12 medium-12">
+        <h2>
+          {{post.titulo}}
+        </h2>
+      </div>
+      <div class="col-md-12">
+          <div class="picture animated flipInY visible" data-animation="flipInY" data-animation-delay="500">
+              <img src="{{post.url}}" alt="" class="img-responsive imgPortada">
+          </div>
+        <div [innerHtml]="htmlText"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

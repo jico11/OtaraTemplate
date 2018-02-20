@@ -1,0 +1,134 @@
+@import '../../../mq.scss';
+.aboutus{
+    background-color: #f6f6f6;
+}
+.section-header{
+    padding-top:40px;
+    text-align: center;
+    color: #000;
+    h2{
+        font-family: 'Oxygen', sans-serif;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        line-height: 40px;
+        position: relative;
+        display: inline-block;
+        font-size: 65px;
+        margin-top: 15px;
+        margin-bottom: 0;
+        color: #FFF;
+        font-weight: 700;
+        text-shadow: 2px 2px 0 rgba(0,0,0,0.62);
+        @include mobile{
+            font-size: 35px;
+        }
+    }
+}
+
+p{
+    font-family: 'Dosis', sans-serif;
+}
+
+.image{
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    background: url('../../../assets/images/carusel3.jpg') !important;
+    background-position: center;
+    background-repeat: no-repeat !important;
+    background-size: 160% !important;
+    z-index: 0;
+    display: block;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    height: 950px;
+    left: 0;
+    position: fixed;
+    right: 0;
+    margin-top: -50px;
+    @include mobile{
+        background-size: 700% !important;
+    }
+    
+}
+.layer {
+        background-color: rgba(106, 186, 133, 0.36);
+        position: fixed;
+        margin-top: -50px;    
+        width: 100%;
+        display: block;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        right: 0;
+        z-index: 0;
+    }
+
+
+
+.top{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-family: 'Cantarell';
+}
+.services-widget{
+        background: rgba(250, 250, 250, 0.88);
+        display: flex;
+        position: relative;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        padding: 30px;
+        vertical-align: top;
+        border: 1px solid rgba(37, 40, 38, 0.3);
+        box-shadow: 5px 5px 5px rgba(37, 40, 38, 0.3);
+        margin-bottom: 20px;
+        @include mobile{
+            display: block;
+        }
+        
+        &:nth-child(even){
+            background: rgba(250, 250, 250, 0.88);
+            
+        }
+
+        h2{
+            font-family: 'Oxygen', sans-serif;
+        }
+        .widget-icon{
+            float: none;
+            margin: 0 auto;
+            text-align: center;
+            align-items: stretch;
+            i{
+                position:relative;
+                top: calc(50% - 60px);
+            }
+        }
+        .fa-size{
+           font-size: 130px !important;
+            width: auto;
+            height: auto;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+            background: transparent;
+            border-style: none;
+            color: #000;
+        }
+}
+
+.valoresTItle{
+    &::first-letter{
+        color: #e53935;
+        font-size: 50px;
+    }
+}
+.misionTItle{
+    &::first-letter{
+        color: #039BE5;
+        font-size: 50px;
+    }
+}
+.visionTItle{
+    &::first-letter{
+        color: #43A047;
+        font-size: 50px;
+    }
+}

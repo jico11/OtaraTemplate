@@ -1,0 +1,100 @@
+<div class="news">
+    <!--  <div *ngFor="let uploads of uploadsObservable | async"> 
+            <div>
+                <!--<img src="{{uploads.url}}"/> --
+                <h4>{{uploads.name}}</h4>
+            </div>
+    </div> -->
+    <div class="section-header">
+        <h2>
+          Noticias
+        </h2>
+    </div>
+    <div class="container">
+
+        <div class="row mb-5">
+            <div *ngFor="let uploads of posts">
+                <div class="col-sm-6 col-md-4 card-general">
+                    <div class="card card-inverse card-info">
+                        <!--<img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif"> -->
+                        <img class="card-img-top" src="{{uploads.url}}"/>
+                        <div class="card-block">
+                            <!-- <figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure>-->
+                            <h4 class="card-title">{{uploads.titulo}}</h4>
+                         <!--   <div class="card-text">
+                                {{uploads.contenido}}
+                            </div>-->
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-info btn-sm" (click)="irNoticia(uploads.key)">Leer Más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div class="container">
+      <div class="row mb-5">
+          <div class="col-sm-6 col-md-4 card-general">
+              <div class="card card-inverse card-info">
+                  <img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+                  <div class="card-block">
+                     <!-- <figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure>--
+                      <h4 class="card-title">Phasellus cursus quam sit amet tortor cursus</h4>
+                      <div class="card-text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio mi, imperdiet nec aliquam mattis, convallis eu tellus.
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="btn btn-info btn-sm">Leer Más</button>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-6 col-md-4 card-general">
+              <div class="card card-inverse card-info">
+                  <img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+                  <div class="card-block">
+                    <!--  <figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure> --
+                      <h4 class="card-title">Phasellus cursus quam sit amet tortor cursus</h4>
+                      <div class="card-text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio mi, imperdiet nec aliquam mattis, convallis eu tellus.
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="btn btn-info btn-sm">Leer Más</button>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-6 col-md-4 card-general">
+              <div class="card card-inverse card-info">
+                  <img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+                  <div class="card-block">
+                      <!--<figure class="profile profile-inline">
+                          <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                      </figure>--
+                      <h4 class="card-title">Phasellus cursus quam sit amet tortor cursus</h4>
+                      <div class="card-text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio mi, imperdiet nec aliquam mattis, convallis eu tellus.
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="btn btn-info btn-sm">Leer Más</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div> -->
+
+    <div class="card-footer">
+        <button class="btn btn-info btn-sm">Ver anteriores</button>
+    </div>
+
+</div>

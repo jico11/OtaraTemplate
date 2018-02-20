@@ -1,0 +1,117 @@
+@import '../../../../mq.scss';
+.section-header{
+    background: #fff;
+    text-align: center;
+    color: #272727;
+    //padding-top: 100px;
+    padding-bottom: 20px;
+    h2{
+        padding-bottom: 10px;
+        line-height: 40px;
+        position: relative;
+        display: inline-block;
+        font-size: 45px;
+        text-transform: uppercase;
+        margin-top: 15px;
+        margin-bottom: 0;
+        font-weight: 700;
+        @include mobile {
+            font-size: 35px;
+        }
+    }
+  }
+
+/////////////////
+a#back{
+	width: 69px;
+	display: block;
+	color: #2A3136;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-indent: 16px;
+	padding-top: 1px;
+    margin-bottom: 5px;
+}
+
+.body-blur{
+		//background: #2A3136 url('../../assets/images/blurbg.jpg') no-repeat top center !important
+		background-size: 100% !important;
+		padding-top: 150px;
+		h1{
+			font-family: Raleway;
+			color: #000;
+			margin: 0 auto;
+			margin-bottom: 20px;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 4.2em;
+            line-height: 1.2em;
+        }
+		
+		.ql-size-small {
+			font-size: 0.75em;
+		}
+		.ql-size-large {
+			font-size: 1.5em;
+		}
+		.ql-size-huge {
+			font-size: 2.5em;
+		}
+}
+
+.animated{
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.imgPortada{
+	margin: 0 auto;
+	padding-bottom: 50px;
+	height: 300px;
+}
+
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em){
+	h1{
+		margin: 0 auto;
+        font-size: 2.5em;
+    }
+	div{
+		p{
+			font-size: 1em;
+        }
+    }
+	#external-btn{
+		width: 50px;
+		height: 50px;
+		display: block;
+        margin: 0 auto 20px auto;
+    }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em){
+	div{
+		p{
+           font-size: 1.1em;
+        }
+    }
+	#external-btn{
+		width: 80px;
+        height: 80px;
+    }
+}
+
+.ql-size-small {
+  font-size: 0.75em;
+}
+.ql-size-large {
+  font-size: 1.5em;
+}
+.ql-size-huge {
+  font-size: 2.5em;
+}

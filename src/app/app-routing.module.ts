@@ -7,6 +7,7 @@ import { PanelComponent } from 'app/pages/panel/panel.component';
 import { PanelRoutingModule } from 'app/pages/panel/panel-routing.module';
 import { NoticiaComponent } from 'app/pages/noticias/noticia/noticia.component';
 import { DetallenoticiaComponent } from 'app/pages/noticias/detallenoticia/detallenoticia.component';
+import { LoginComponent } from 'app/auth/login/login/login.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'informacion', component: InformacionComponent },
   { path: 'panel', component: PanelComponent},
   {path: 'noticia', component: NoticiaComponent},
-  {path: 'detalle-noticia/:id',component: DetallenoticiaComponent}
+  {path: 'detalle-noticia/:id',component: DetallenoticiaComponent},
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

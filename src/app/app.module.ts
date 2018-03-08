@@ -26,6 +26,9 @@ import { PagerService } from 'app/services/pager.service';
 import { EditorComponent } from './pages/panel/editor/editor.component';
 import { NoticiaComponent } from './pages/noticias/noticia/noticia.component';
 import { DetallenoticiaComponent } from './pages/noticias/detallenoticia/detallenoticia.component';
+import { LoginComponent } from './auth/login/login/login.component';
+import { AuthenticationService } from 'app/services/authentication.service';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 export const firebaseConfig = {
 }
@@ -44,7 +47,8 @@ export const firebaseConfig = {
     EditpostComponent,
     EditorComponent,
     NoticiaComponent,
-    DetallenoticiaComponent
+    DetallenoticiaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,7 @@ export const firebaseConfig = {
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     TinymceModule.withConfig({
       selector: 'textarea',
       theme: 'modern',
@@ -72,7 +77,8 @@ export const firebaseConfig = {
     ContactService,
     UploadService,
     PanelService,
-    PagerService
+    PagerService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <section>
+<div *ngIf="authService.currentUser">
 <div class="body-blur" [hidden]="!showText"> 
 <!--<div class="body-blur">-->
   <div class="section-header">
@@ -19,6 +20,7 @@
       <div class="col-md-3 col-xs-12 text-center"></div>
     </div>
   </div>
+</div>
 </div>
 <router-outlet></router-outlet>
 </section>

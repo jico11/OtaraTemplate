@@ -7,6 +7,7 @@ import { ContactService } from "app/services/contact.service";
 
 import { Upload } from 'app/services/uploads/shared/upload';
 import { UploadService } from 'app/services/uploads/shared/upload.service';
+import { AuthenticationService } from 'app/services/authentication.service';
 
 @Component({
   selector: 'app-createpost',
@@ -29,7 +30,7 @@ export class CreatepostComponent implements OnInit {
   post: any = {};
   selectedFiles: FileList|null;
 
-  constructor(private upSvc: UploadService,private router: Router, private _myCommunicationService: PanelService, fb: FormBuilder, private _contactService: ContactService) {
+  constructor(public authService: AuthenticationService,private upSvc: UploadService,private router: Router, private _myCommunicationService: PanelService, fb: FormBuilder, private _contactService: ContactService) {
 
     // Subscribe to the service event
     _myCommunicationService.changeEmitted$.subscribe(myMessage => {

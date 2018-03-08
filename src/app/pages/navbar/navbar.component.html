@@ -15,7 +15,9 @@
         <li><a href="#">Home</a></li>
         <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
         <li><a href="/informacion">Información</a></li>
+        <li><a class="button" (click)="logout()" *ngIf="authService.currentUser">Logout</a></li>
       </ul>
+      
     </div>
     <!--/.nav-collapse -->
   </div>

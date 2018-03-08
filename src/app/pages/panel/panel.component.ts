@@ -4,6 +4,7 @@ import { PanelService } from 'app/services/panel.service';
 import { ContactService } from 'app/services/contact.service';
 import { saveAs } from 'file-saver';
 import * as XLSX from 'xlsx';
+import { AuthenticationService } from 'app/services/authentication.service';
 
 type AOA = Array<Array<any>>;
 
@@ -29,7 +30,7 @@ export class PanelComponent implements OnInit {
   data: AOA;
   //wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'binary' };
 
-  constructor(private router: Router, private _myCommunicationService: PanelService, private _postService: ContactService) {
+  constructor(public authService: AuthenticationService,private router: Router, private _myCommunicationService: PanelService, private _postService: ContactService) {
     
         // Subscribe to the service event
         _myCommunicationService.changeEmitted$.subscribe(myMessage => {

@@ -36,4 +36,8 @@ export class NewsComponent implements OnInit {
   irNoticia(id){
     this.router.navigate(['/detalle-noticia/'+id]);
   }
+
+  irNoticias(){
+    this.router.navigate(['/noticia']);
+  }
 }

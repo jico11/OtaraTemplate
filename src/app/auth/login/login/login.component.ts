@@ -9,7 +9,7 @@ import { AuthenticationService } from 'app/services/authentication.service';
 })
 export class LoginComponent implements OnInit {
   
-  isNewUser = true;
+  isNewUser = false;
   email = '';
   password = '';
   errorMessage = '';
@@ -66,17 +66,17 @@ export class LoginComponent implements OnInit {
 
   validateForm(email: string, password: string): boolean {
     if (email.length === 0) {
-      this.errorMessage = 'Please enter Email!'
+      this.errorMessage = 'Ingrese Email'
       return false
     }
 
     if (password.length === 0) {
-      this.errorMessage = 'Please enter Password!'
+      this.errorMessage = 'Ingrese Contraseña'
       return false
     }
 
     if (password.length < 6) {
-      this.errorMessage = 'Password should be at least 6 characters!'
+      this.errorMessage = 'Contraseña debe tener minimo 6 caracteres'
       return false
     }
 

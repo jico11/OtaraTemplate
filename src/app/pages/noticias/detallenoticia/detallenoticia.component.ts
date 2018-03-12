@@ -29,4 +29,8 @@ export class DetallenoticiaComponent implements OnInit {
     });
   }
 
+  irNoticias(){
+    this.links.navigate(['/noticia']);
+  }
+
 }

@@ -16,24 +16,7 @@ export class UploadService {
   constructor(private db: AngularFireDatabase) { }
   
   getUploadsLimit() {
-    /*this.uploads = this.db.list(this.basePath).snapshotChanges().map((actions) => {
-      return actions.map((a) => {
-        const data = a.payload.val();
-        const $key = a.payload.key;
-        return { $key, ...data };
-      });
-    });*/
     this.uploads = this.db.list(this.basePath,ref => ref.limitToLast(3)).valueChanges();
-    /*this.uploads.subscribe(res => {
-      console.log(res);
-     });*/
-    /*firebase.database().ref(this.basePath).limitToLast(3).on('value', function(snapshot) {      
-      //console.log(snapshot.val());
-      var datos = snapshot.val();
-      //console.log(datos.val);
-      return snapshot.val();
-    });*/
-    //console.log(this.uploads);
     return this.uploads;
   }
 

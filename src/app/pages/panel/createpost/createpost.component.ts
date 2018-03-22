@@ -81,7 +81,7 @@ export class CreatepostComponent implements OnInit {
       var min = today.getMinutes();
       var mil = today.getSeconds();
       var fecha = dd+'/'+mm+'/'+yyyy+' '+hh+':'+min+':'+mil;
-      this.post = { titulo: this.form.controls['titulo'].value, contenido: this.form.controls['editor'].value, file : this.selectedFiles.item(0),fecha: fecha};
+      this.post = { titulo: this.form.controls['titulo'].value, contenido: this.form.controls['editor'].value, file : this.selectedFiles.item(0),fecha: fecha,mostrar: true};
       
     this.upSvc.pushUpload(this.post)
     this._myCommunicationService.emitChange(true);

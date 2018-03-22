@@ -8,7 +8,7 @@
   <div class="container">
 
       <div class="row mb-5">
-          <div *ngFor="let key of keys">
+          <div *ngFor="let key of pagedItems">
               <div class="col-sm-6 col-md-3 card-general">
                   <div class="card card-inverse card-info">
                       <img class="card-img-top" src="{{posts[key].url}}"/>
@@ -22,6 +22,26 @@
                   </div>
               </div>
           </div>
+      </div>
+      <div class="col-md-12 numpag">
+        <!-- pager -->
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">Primera</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Anterior</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Siguiente</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Ultima</a>
+          </li>
+        </ul>
       </div>
   </div>
 </div>

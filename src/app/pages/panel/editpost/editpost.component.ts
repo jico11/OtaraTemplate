@@ -4,6 +4,7 @@ import { UploadService } from 'app/services/uploads/shared/upload.service';
 import { PagerService } from 'app/services/pager.service';
 import { PanelService } from 'app/services/panel.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'app/services/authentication.service';
 
 @Component({
   selector: 'app-editpost',
@@ -19,7 +20,7 @@ export class EditpostComponent implements OnInit {
 
   // paged items
   pagedItems: any[];
-  constructor(private upSvc: UploadService, private pagerService: PagerService,private _myCommunicationService: PanelService,private router: Router) { }
+  constructor(public authService: AuthenticationService,private upSvc: UploadService, private pagerService: PagerService,private _myCommunicationService: PanelService,private router: Router) { }
 
   ngOnInit() {
     var arr = [];
@@ -53,6 +54,11 @@ export class EditpostComponent implements OnInit {
     this._myCommunicationService.emitChange(true);
     this.router.navigate(['/panel']);
 
+  }
+
+  elimiarNoticia(id){
+    //this.router.navigate(['/detalle-noticia/'+id]);
+    this.upSvc.deleteUpload(id);
   }
 
 }

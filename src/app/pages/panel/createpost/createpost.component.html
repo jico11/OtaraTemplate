@@ -10,7 +10,7 @@
       <input #titulo formControlName="titulo" placeholder="Titulo..." type="text">
       <div class="alert alert-danger" [hidden]="!alertaTitulo"> Ingrese algún titulo </div>
       <!--<label> -->
-        <input type="file" (change)="detectFiles($event)">
+        <input type="file" (change)="detectFiles($event)" accept="image/jpeg,image/png">
         <div class="alert alert-danger" [hidden]="!alertaImagen"> Ingrese la imagen de la noticia </div>
      <!--</label> -->
       <app-tinymce #editor (onContentChanged)="logChange($event);" formControlName="editor"></app-tinymce>

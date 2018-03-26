@@ -1,4 +1,4 @@
-<section id="proyects">
+<section id="proyects" *ngIf="authService.currentUser">
   <div class="section-header">
     <h2>
       EDITAR POST
@@ -12,14 +12,17 @@
         <div class="col-md-12 posts">
             <div class="post-container">
                 <div class="row">
-                  <div class="col-xs-12 col-md-6 col-lg-6">
+                  <div class="col-xs-12 col-md-6 col-lg-5">
                     <p class="post-title title-header">Titulo</p>
                   </div>
-                  <div class="col-xs-12 col-md-4 col-lg-4">
+                  <div class="col-xs-12 col-md-4 col-lg-3">
                     <p class="post-title title-header">Fecha</p>
                   </div>
                   <div class="col-xs-12 col-md-2 col-lg-2">
                     <p class="post-title title-header center">Editar</p>
+                  </div>
+                  <div class="col-xs-12 col-md-2 col-lg-2">
+                    <p class="post-title title-header center">Eliminar</p>
                   </div>
                 </div>
               </div>
@@ -44,14 +47,17 @@
         <div class="col-xs-12 col-md-12 posts" *ngFor="let key of pagedItems">
           <div class="post-container">
             <div class="row">
-              <div class="col-xs-12 col-md-6 col-lg-6">
+              <div class="col-xs-12 col-md-6 col-lg-5">
                 <p class="post-title">{{ posts[key].titulo }}</p>
               </div>
-              <div class="col-xs-12 col-md-4 col-lg-4">
+              <div class="col-xs-12 col-md-4 col-lg-3">
                 <p class="post-title">{{ posts[key].fecha }}</p>
               </div>
               <div class="col-xs-12 col-md-2 col-lg-2">
                 <a routerLink="/panel/editor/{{key}}" class="cta-btn btn2">editar</a>
+              </div>
+              <div class="col-xs-12 col-md-2 col-lg-2">
+                <a (click)="elimiarNoticia(key)" class="cta-btn btn2">eliminar</a>
               </div>
             </div>
           </div>

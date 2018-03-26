@@ -5,6 +5,7 @@ import { UploadService } from 'app/services/uploads/shared/upload.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PanelService } from 'app/services/panel.service';
+import { AuthenticationService } from 'app/services/authentication.service';
 
 @Component({
   selector: 'app-editor',
@@ -27,7 +28,7 @@ export class EditorComponent implements OnInit {
   alertaTitulo: Boolean = false;
   alertaNoticia: Boolean = false;
   alertaImagen: Boolean = false;
-  constructor(private upSvc: UploadService, private links: Router, private router: ActivatedRoute, private _sanitizer: DomSanitizer, private _myCommunicationService: PanelService, fb: FormBuilder) { 
+  constructor(public authService: AuthenticationService,private upSvc: UploadService, private links: Router, private router: ActivatedRoute, private _sanitizer: DomSanitizer, private _myCommunicationService: PanelService, fb: FormBuilder) { 
     // Subscribe to the service event
     _myCommunicationService.changeEmitted$.subscribe(myMessage => {
       this.showText = myMessage;
@@ -80,7 +81,7 @@ export class EditorComponent implements OnInit {
     if(this.form.controls['titulo'].value != '' && this.form.controls['editor'].value != ''){
       this.post = {titulo: this.form.controls['titulo'].value, contenido: this.form.controls['editor'].value, $key:this.saveId};  
       //console.log(this.post);    
-      //this.upSvc.updatePost(this.post)
+      this.upSvc.updatePost(this.post)
       this._myCommunicationService.emitChange(true);
       this.links.navigate(['/panel']);
     }

@@ -20,38 +20,33 @@ export class UploadService {
     return this.uploads;
   }
 
-  getUploads1() {
+ /* getUploads1() {
     this.uploads = this.db.list(this.basePath).valueChanges();   
     //console.log(this.uploads);
     return this.uploads;
   }
-
+*/
   getUploads() {
-    /*this.uploads = this.db.list(this.basePath).snapshotChanges().map((actions) => {
-      return actions.map((a) => {
-        const data = a.payload.val();
-        const $key = a.payload.key;
-        return { $key, ...data };
-      });
-    });*/
-    //this.uploads = this.db.list(this.basePath).valueChanges();
-    //quitado 20-02-2018 this.uploads = this.db.list(this.basePath).snapshotChanges().map(uploads => {return uploads.map(uploads => ({key:uploads.key}))});
-    //console.log(this.uploads);
     return this.db.object(this.basePath).valueChanges();
-    //console.log(this.uploads.map);
-    //return this.uploads;
   }
 
   getPost(id){
-    //this.uploads = this.db.list(this.basePath+'/'+id).valueChanges();
     return this.db.object(this.basePath+'/'+id).valueChanges();
   }
 
-  deleteUpload(upload: Upload) {
+  /*deleteUpload(upload: Upload) {
     this.deleteFileData(upload.$key)
     .then( () => {
       this.deleteFileStorage(upload.name);
     })
+    .catch((error) => console.log(error));
+  }
+*/
+  deleteUpload(id) {
+    this.deleteFileData(id)
+  /*  .then( () => {
+      this.deleteFileStorage(upload.name);
+    })*/
     .catch((error) => console.log(error));
   }
 
